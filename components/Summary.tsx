@@ -105,17 +105,6 @@ export default function Summary() {
                             </motion.div>
                         ))}
 
-                        {/* GPA card */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 16 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.4, delay: 0.55 }}
-                            viewport={{ once: true }}
-                            className="glass rounded-2xl p-5 border border-violet-500/20 bg-gradient-to-br from-violet-500/10 to-transparent text-center"
-                        >
-                            <p className="text-3xl font-black gradient-text">3.92</p>
-                            <p className="text-xs text-gray-500 mt-1 font-semibold uppercase tracking-wider">GPA / 4.00</p>
-                        </motion.div>
                     </motion.div>
                 </div>
             </div>
