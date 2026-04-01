@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { Analytics } from "@vercel/analytics/react";
+import Navbar from "@/components/Navbar";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,7 +32,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <Navbar />
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

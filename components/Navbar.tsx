@@ -3,16 +3,18 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
+import Link from 'next/link';
+
 const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Expertise', href: '#competencies' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Leadership', href: '#leadership' },
-    { name: 'Achievements', href: '#achievements' },
-    { name: 'Education', href: '#education' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Expertise', href: '/competencies' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Experience', href: '/experience' },
+    { name: 'Leadership', href: '/leadership' },
+    { name: 'Achievements', href: '/achievements' },
+    { name: 'Education', href: '/education' },
+    { name: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
@@ -25,10 +27,8 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const handleNav = (href: string) => {
+    const handleBrandClick = () => {
         setMenuOpen(false);
-        const el = document.querySelector(href);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
     };
 
     return (
@@ -40,31 +40,30 @@ export default function Navbar() {
                 className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4"
             >
                 <div
-                    className={`flex items-center gap-0.5 px-3 py-2 rounded-2xl border transition-all duration-500 ${scrolled
-                            ? 'bg-black/70 border-white/10 backdrop-blur-xl shadow-xl shadow-black/40'
-                            : 'bg-white/[0.03] border-white/[0.06] backdrop-blur-md'
+                    className={`flex items-center justify-between w-full max-w-5xl gap-0.5 px-3 py-2 rounded-2xl border transition-all duration-500 ${scrolled
+                        ? 'bg-black/70 border-white/10 backdrop-blur-xl shadow-xl shadow-black/40'
+                        : 'bg-white/[0.03] border-white/[0.06] backdrop-blur-md'
                         }`}
                 >
                     {/* Logo */}
-                    <a
-                        href="#home"
-                        onClick={(e) => { e.preventDefault(); handleNav('#home'); }}
+                    <Link
+                        href="/"
+                        onClick={handleBrandClick}
                         className="px-3 py-1.5 mr-1 text-sm font-extrabold text-white tracking-tight whitespace-nowrap"
                     >
                         Isa<span className="gradient-text">.</span>
-                    </a>
+                    </Link>
 
                     {/* Desktop links */}
                     <div className="hidden lg:flex items-center gap-0.5">
                         {navLinks.map((link) => (
-                            <a
+                            <Link
                                 key={link.name}
                                 href={link.href}
-                                onClick={(e) => { e.preventDefault(); handleNav(link.href); }}
                                 className="px-2.5 py-1.5 text-[12.5px] font-medium text-gray-400 rounded-xl hover:text-white hover:bg-white/8 transition-all duration-200 whitespace-nowrap"
                             >
                                 {link.name}
-                            </a>
+                            </Link>
                         ))}
                     </div>
 
@@ -95,17 +94,20 @@ export default function Navbar() {
                     >
                         <div className="grid grid-cols-2 gap-1">
                             {navLinks.map((link, i) => (
-                                <motion.a
+                                <motion.div
                                     key={link.name}
-                                    href={link.href}
-                                    onClick={(e) => { e.preventDefault(); handleNav(link.href); }}
                                     initial={{ opacity: 0, y: -8 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: i * 0.04 }}
-                                    className="block px-4 py-2.5 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/8 rounded-xl transition-all"
                                 >
-                                    {link.name}
-                                </motion.a>
+                                    <Link
+                                        href={link.href}
+                                        onClick={() => setMenuOpen(false)}
+                                        className="block px-4 py-2.5 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/8 rounded-xl transition-all"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </motion.div>
                             ))}
                         </div>
                     </motion.div>

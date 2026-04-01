@@ -89,8 +89,7 @@ export default function About() {
                     >
                         <div className="space-y-6">
                             <p className="text-xl text-white font-medium leading-relaxed">
-                                I am an Information Systems student at{' '}
-                                <span className="gradient-text font-bold text-2xl">Universitas Singaperbangsa Karawang</span>{' '}
+                                I am a technology professional exploring the intersection of business and IT,
                                 with a track record in leading technology-driven initiatives.
                             </p>
                             <p className="text-base text-gray-400 leading-relaxed max-w-2xl">
@@ -109,23 +108,8 @@ export default function About() {
 
                         {/* Cards section */}
                         <div className="grid md:grid-cols-2 gap-4">
-                            {/* Education card */}
-                            <div className="glass glass-hover rounded-3xl p-6 border border-violet-500/20 relative overflow-hidden">
-                                <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-[60px] bg-violet-600/20 pointer-events-none" />
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="w-10 h-10 rounded-xl bg-violet-500/20 flex items-center justify-center text-xl">🎓</div>
-                                    <span className="text-xs font-bold text-violet-400 uppercase tracking-widest">Education</span>
-                                </div>
-                                <h3 className="text-base font-bold text-white mb-1 leading-snug">Bachelor of Information Systems</h3>
-                                <p className="text-xs text-gray-500 mb-4">UNSIKA — 2022 to Present</p>
-                                <div className="flex items-center gap-2 pt-3 border-t border-white/5">
-                                    <span className="text-2xl font-black gradient-text">3.92</span>
-                                    <span className="text-xs text-gray-600 font-bold uppercase tracking-widest">GPA / 4.00</span>
-                                </div>
-                            </div>
-
                             {/* Quick Stats Grid */}
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="col-span-2 grid grid-cols-2 md:grid-cols-3 gap-4">
                                 {[
                                     { value: '50+', label: 'Members Led', color: 'from-cyan-400/20' },
                                     { value: '4+', label: 'Organizations', color: 'from-emerald-400/20' },
@@ -135,11 +119,11 @@ export default function About() {
                                         <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">{stat.label}</p>
                                     </div>
                                 ))}
-                                <div className="col-span-2 glass rounded-3xl p-4 flex items-center gap-4 border border-white/5">
-                                    <div className="w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center text-xl">📍</div>
-                                    <div>
-                                        <p className="text-xs font-bold text-white uppercase tracking-widest">Current Location</p>
-                                        <p className="text-sm text-gray-400">Karawang, West Java</p>
+                                <div className="col-span-2 md:col-span-1 glass rounded-3xl p-4 flex flex-col items-center justify-center gap-2 border border-white/5 bg-gradient-to-br from-violet-500/10 to-transparent">
+                                    <div className="w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center text-xl mb-1">📍</div>
+                                    <div className="text-center">
+                                        <p className="text-xs font-bold text-white uppercase tracking-widest">Location</p>
+                                        <p className="text-sm text-gray-400">Karawang, ID</p>
                                     </div>
                                 </div>
                             </div>

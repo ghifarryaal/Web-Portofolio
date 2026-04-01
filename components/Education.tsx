@@ -53,8 +53,8 @@ export default function Education() {
                                     <p className="text-sm text-gray-400 mb-0.5">Bachelor of Information Systems</p>
                                     <p className="text-xs font-mono text-gray-600">2022 – Present</p>
                                 </div>
-                                <div className="text-right">
-                                    <p className="text-4xl font-black gradient-text leading-none">3.92</p>
+                                <div className="text-right mt-4 md:mt-0">
+                                    <p className="text-4xl font-black gradient-text leading-none">3.93</p>
                                     <p className="text-xs text-gray-600 mt-1 font-semibold uppercase tracking-wider">GPA / 4.00</p>
                                 </div>
                             </div>
@@ -67,7 +67,7 @@ export default function Education() {
                     {/* Highlights */}
                     <div className="relative grid sm:grid-cols-3 gap-4">
                         {[
-                            { icon: '🏆', label: 'Academic Achievement', value: 'Top GPA — 3.92/4.00' },
+                            { icon: '🏆', label: 'Academic Achievement', value: 'Top GPA — 3.93/4.00' },
                             { icon: '📚', label: 'Field of Study', value: 'Information Systems' },
                             { icon: '🎯', label: 'Focus Areas', value: 'IT, Product, Data' },
                         ].map((item) => (

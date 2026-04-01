@@ -51,15 +51,22 @@ export default function Hero() {
                     animate={{ scale: [1, 1.3, 1] }}
                     transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
                 />
-                {/* Subtle grid */}
-                <div
-                    className="absolute inset-0 opacity-[0.022]"
-                    style={{
-                        backgroundImage:
-                            'linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)',
-                        backgroundSize: '64px 64px',
-                    }}
-                />
+                {/* Premium Modern Grid */}
+                <div className="absolute inset-0">
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(139,92,246,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_70%,transparent_100%)]" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-violet-500/5 via-transparent to-cyan-500/5 pointer-events-none mix-blend-overlay" />
+                    <motion.div
+                        className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDAuNWg0ME0wIDAuNXY0MCIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=')]"
+                        animate={{
+                            backgroundPosition: ['0px 0px', '40px 40px'],
+                            opacity: [0.3, 0.5, 0.3]
+                        }}
+                        transition={{
+                            backgroundPosition: { duration: 4, repeat: Infinity, ease: 'linear' },
+                            opacity: { duration: 3, repeat: Infinity, ease: 'easeInOut' }
+                        }}
+                    />
+                </div>
             </div>
 
             {/* ── Content ── */}
@@ -149,21 +156,16 @@ export default function Hero() {
                     className="flex flex-wrap gap-3 justify-center items-center mt-10 mb-12"
                 >
                     {[
-                        { label: 'View Projects', href: '#projects', style: 'bg-white text-black font-bold hover:bg-gray-100 shadow-[0_0_30px_rgba(255,255,255,0.12)]' },
-                        { label: 'View Experience', href: '#experience', style: 'border border-white/15 hover:bg-white/8 text-white font-semibold backdrop-blur-md' },
+                        { label: 'View Projects', href: '/projects', style: 'bg-white text-black font-bold hover:bg-gray-100 shadow-[0_0_30px_rgba(255,255,255,0.12)]' },
+                        { label: 'View Experience', href: '/experience', style: 'border border-white/15 hover:bg-white/8 text-white font-semibold backdrop-blur-md' },
                         { label: 'Download CV', href: 'https://drive.google.com/file/d/1NbH-V17Dyqxls_A2w8tcA2v-3TJBy7db/view?usp=drive_link', style: 'border border-violet-500/30 bg-violet-500/10 hover:bg-violet-500/20 text-violet-300 font-semibold', external: true },
-                        { label: 'Contact Me', href: '#contact', style: 'border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 font-semibold' },
+                        { label: 'Contact Me', href: '/contact', style: 'border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 font-semibold' },
                     ].map((btn) => (
                         <motion.a
                             key={btn.label}
                             href={btn.href}
                             target={'external' in btn ? '_blank' : undefined}
                             rel={'external' in btn ? 'noopener noreferrer' : undefined}
-                            onClick={!('external' in btn) && btn.href.startsWith('#') ? (e) => {
-                                e.preventDefault();
-                                const el = document.querySelector(btn.href as string);
-                                if (el) el.scrollIntoView({ behavior: 'smooth' });
-                            } : undefined}
                             className={`px-6 py-3 rounded-xl text-sm tracking-wide transition-all ${btn.style}`}
                             whileHover={{ scale: 1.04 }}
                             whileTap={{ scale: 0.97 }}
