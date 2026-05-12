@@ -10,13 +10,6 @@ const capabilities = [
     'Execute structured, scalable initiatives',
 ];
 
-const pillars = [
-    { icon: '🏗️', label: 'Builder', color: 'text-cyan-400' },
-    { icon: '📊', label: 'Analyst', color: 'text-violet-400' },
-    { icon: '🧭', label: 'Strategist', color: 'text-amber-400' },
-    { icon: '👥', label: 'Leader', color: 'text-emerald-400' },
-];
-
 export default function Summary() {
     return (
         <section id="summary" className="py-24 px-6">
@@ -35,16 +28,16 @@ export default function Summary() {
                     </h2>
                 </motion.div>
 
-                <div className="grid lg:grid-cols-5 gap-10">
+                <div className="max-w-3xl mx-auto">
                     {/* Main text */}
                     <motion.div
                         initial={{ opacity: 0, y: 24 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.1 }}
+                        transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="lg:col-span-3 space-y-8"
+                        className="space-y-8 text-center"
                     >
-                        <p className="text-lg text-gray-300 leading-relaxed">
+                        <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
                             Technology-focused business professional with proven experience in building{' '}
                             <span className="text-white font-semibold">digital platforms</span>, developing{' '}
                             <span className="text-white font-semibold">workflow automation systems</span>, and leading{' '}
@@ -55,15 +48,15 @@ export default function Summary() {
                             to deliver meaningful, measurable impact.
                         </p>
 
-                        {/* Capability checklist */}
-                        <div className="glass rounded-2xl p-6 border border-white/8 space-y-3">
-                            <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Demonstrated Ability To</p>
+                        {/* Capability checklist - Optimized for mobile */}
+                        <div className="glass rounded-3xl p-6 md:p-10 border border-white/8 grid md:grid-cols-2 gap-x-8 gap-y-4 text-left">
+                            <p className="col-span-full text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Demonstrated Ability To</p>
                             {capabilities.map((cap, i) => (
                                 <motion.div
                                     key={cap}
                                     initial={{ opacity: 0, x: -16 }}
                                     whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.4, delay: 0.2 + i * 0.08 }}
+                                    transition={{ duration: 0.4, delay: 0.1 + i * 0.05 }}
                                     viewport={{ once: true }}
                                     className="flex items-center gap-3"
                                 >
@@ -76,35 +69,6 @@ export default function Summary() {
                                 </motion.div>
                             ))}
                         </div>
-                    </motion.div>
-
-                    {/* Pillars */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 24 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        viewport={{ once: true }}
-                        className="lg:col-span-2 space-y-4"
-                    >
-                        <p className="text-xs font-bold text-gray-600 uppercase tracking-widest mb-5">Professional Identity</p>
-                        {pillars.map((p, i) => (
-                            <motion.div
-                                key={p.label}
-                                initial={{ opacity: 0, y: 16 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4, delay: 0.15 + i * 0.1 }}
-                                viewport={{ once: true }}
-                                whileHover={{ x: 6 }}
-                                className="glass glass-hover rounded-2xl p-5 flex items-center gap-4 border border-white/8"
-                            >
-                                <span className="text-2xl">{p.icon}</span>
-                                <div>
-                                    <p className={`text-base font-bold ${p.color}`}>{p.label}</p>
-                                    <p className="text-xs text-gray-600 mt-0.5">Core professional identity</p>
-                                </div>
-                            </motion.div>
-                        ))}
-
                     </motion.div>
                 </div>
             </div>

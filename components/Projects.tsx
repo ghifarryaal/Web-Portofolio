@@ -146,14 +146,29 @@ export default function Projects() {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {projects.map((p, i) => (
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0 },
+                        show: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.1
+                            }
+                        }
+                    }}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, margin: "-50px" }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    {projects.map((p) => (
                         <motion.div
                             key={p.title}
-                            initial={{ opacity: 0, y: 28 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: i * 0.1 }}
-                            viewport={{ once: true }}
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                show: { opacity: 1, y: 0 }
+                            }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
                             className={`glass glass-hover rounded-[2rem] p-7 border ${p.border} bg-gradient-to-br ${p.accent} to-transparent relative group flex flex-col h-full overflow-hidden`}
                         >
                             {/* Hover glow */}
@@ -247,7 +262,7 @@ export default function Projects() {
                             </div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

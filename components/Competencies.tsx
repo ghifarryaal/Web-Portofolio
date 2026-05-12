@@ -33,23 +33,38 @@ export default function Competencies() {
                     </h2>
                 </motion.div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                    {competencies.map((c, i) => (
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0 },
+                        show: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.05
+                            }
+                        }
+                    }}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, margin: "-50px" }}
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
+                >
+                    {competencies.map((c) => (
                         <motion.div
                             key={c.title}
-                            initial={{ opacity: 0, y: 24 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.45, delay: i * 0.06 }}
-                            viewport={{ once: true }}
+                            variants={{
+                                hidden: { opacity: 0, y: 15 },
+                                show: { opacity: 1, y: 0 }
+                            }}
+                            transition={{ duration: 0.4, ease: "easeOut" }}
                             whileHover={{ y: -5 }}
                             className={`glass glass-hover rounded-2xl p-5 border ${c.border} bg-gradient-to-br ${c.color} to-transparent cursor-default`}
                         >
                             <div className="text-2xl mb-3">{c.icon}</div>
                             <h3 className={`text-[13px] font-bold mb-2 leading-snug ${c.accent}`}>{c.title}</h3>
-                            <p className="text-[11px] text-gray-600 leading-relaxed">{c.description}</p>
+                            <p className="text-[11px] text-gray-400 leading-relaxed">{c.description}</p>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
