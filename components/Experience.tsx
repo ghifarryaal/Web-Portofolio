@@ -13,14 +13,15 @@ const experiences = [
         borderColor: 'border-cyan-500/20',
         glowColor: 'bg-cyan-500/10',
         tagBg: 'bg-cyan-500/10 text-cyan-400',
-        badge: null,
+        badge: '🚀 Top 20 OJK Fintech Startup Accelerator',
         logo: '/Logo/tixchain-type-white.png',
         bullets: [
+            'Top 20 Finalist in OJK Fintech Startup Accelerator Program 2024',
             'Founded and developed blockchain-based NFT ticketing platform',
             'Designed product strategy, business model, and technology architecture',
-            'Led product development, validation, and platform iteration',
             'Secured IDR 10 million in initial project funding',
         ],
+        proof: 'https://drive.google.com/file/d/1b9EF1SBCJd8OjQiwCgpz9VXYtQLYGzER/view?usp=share_link',
     },
     {
         period: 'Jan 2025 – Dec 2025',
@@ -185,17 +186,34 @@ export default function Experience() {
                                         </div>
                                     </div>
 
-                                    {/* Achievement badge */}
-                                    {exp.badge && (
-                                        <motion.div
-                                            initial={{ opacity: 0, scale: 0.9 }}
-                                            whileInView={{ opacity: 1, scale: 1 }}
-                                            transition={{ duration: 0.4, delay: 0.2 }}
-                                            viewport={{ once: true }}
-                                            className="mb-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold"
-                                        >
-                                            {exp.badge}
-                                        </motion.div>
+                                    {/* Achievement badge & Proof */}
+                                    {(exp.badge || ('proof' in exp && exp.proof)) && (
+                                        <div className="flex flex-wrap items-center gap-3 mb-4">
+                                            {exp.badge && (
+                                                <motion.div
+                                                    initial={{ opacity: 0, scale: 0.9 }}
+                                                    whileInView={{ opacity: 1, scale: 1 }}
+                                                    transition={{ duration: 0.4, delay: 0.2 }}
+                                                    viewport={{ once: true }}
+                                                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-300 text-[11px] font-bold"
+                                                >
+                                                    {exp.badge}
+                                                </motion.div>
+                                            )}
+                                            {'proof' in exp && exp.proof && (
+                                                <a
+                                                    href={exp.proof as string}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass border border-white/10 text-[10px] font-bold text-gray-400 hover:text-white hover:border-white/20 transition-all"
+                                                >
+                                                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                    </svg>
+                                                    View Proof
+                                                </a>
+                                            )}
+                                        </div>
                                     )}
 
                                     {/* Bullets */}
