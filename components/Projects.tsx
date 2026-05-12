@@ -42,7 +42,7 @@ const projects = [
         description:
             'Initiated and developed a blockchain-based concert ticketing platform focused on transparency, digital ownership, and fraud prevention.',
         impact: [
-            'Top 20 OJK Fintech Startup Accelerator 2024',
+            'Top 20 OJK Fintech Startup Accelerator 2026',
             'Secured IDR 10 million project funding',
             'Built full product concept and architecture',
             'Designed business model and product strategy',

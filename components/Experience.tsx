@@ -16,7 +16,7 @@ const experiences = [
         badge: '🚀 Top 20 OJK Fintech Startup Accelerator',
         logo: '/Logo/tixchain-type-white.png',
         bullets: [
-            'Top 20 Finalist in OJK Fintech Startup Accelerator Program 2024',
+            'Top 20 Finalist in OJK Fintech Startup Accelerator Program 2026',
             'Founded and developed blockchain-based NFT ticketing platform',
             'Designed product strategy, business model, and technology architecture',
             'Secured IDR 10 million in initial project funding',

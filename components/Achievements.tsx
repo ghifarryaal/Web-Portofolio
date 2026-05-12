@@ -25,7 +25,7 @@ const achievements = [
     {
         icon: '🚀',
         title: 'Top 20 Finalist — OJK Fintech Startup Accelerator',
-        subtitle: 'OJK RI — 2024',
+        subtitle: 'OJK RI — 2026',
         description: 'Selected as a Top 20 finalist in the OJK Fintech Startup Accelerator Program with Tixchain.id, focusing on blockchain-based ticketing.',
         color: 'from-blue-500/10', border: 'border-blue-500/20', dot: 'bg-blue-400', cert: CERT_URLS.ojk,
     },
