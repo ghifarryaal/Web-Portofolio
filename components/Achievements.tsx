@@ -22,6 +22,13 @@ const achievements = [
         color: 'from-amber-500/10', border: 'border-amber-500/20', dot: 'bg-amber-400', cert: CERT_URLS.sobatBumi,
     },
     {
+        icon: '🚀',
+        title: 'Top 20 Finalist — OJK Fintech Startup Accelerator',
+        subtitle: 'OJK RI — 2024',
+        description: 'Selected as a Top 20 finalist in the OJK Fintech Startup Accelerator Program with Tixchain.id, focusing on blockchain-based ticketing.',
+        color: 'from-blue-500/10', border: 'border-blue-500/20', dot: 'bg-blue-400', cert: CERT_URLS.top10,
+    },
+    {
         icon: '🥇',
         title: '1st Winner — Business Plan Competition',
         subtitle: 'Compfair 2024',

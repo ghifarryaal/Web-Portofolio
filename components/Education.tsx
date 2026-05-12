@@ -51,7 +51,7 @@ export default function Education() {
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-1">Universitas Singaperbangsa Karawang</h3>
                                     <p className="text-sm text-gray-400 mb-0.5">Bachelor of Information Systems</p>
-                                    <p className="text-xs font-mono text-gray-600">2022 – Present</p>
+                                    <p className="text-xs font-mono text-gray-600">2022 – 2026</p>
                                 </div>
                                 <div className="text-right mt-4 md:mt-0">
                                     <p className="text-4xl font-black gradient-text leading-none">3.93</p>
