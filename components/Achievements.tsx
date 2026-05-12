@@ -11,6 +11,7 @@ const CERT_URLS = {
     top30: 'https://drive.google.com/file/d/1Ob6JR8xHHQxAt9ek86m03HJeiX2DcgIz/view?usp=drive_link',
     beasiswa: 'https://drive.google.com/file/d/15hioEBgULbiGjOg2-L3d-8vRPxlFZOBR/view?usp=drive_link',
     dutaSaham: 'https://drive.google.com/file/d/1afjn5rscJAxWL5XoK0dCPiEgcVc6v-tL/view?usp=drive_link',
+    ojk: 'https://drive.google.com/file/d/1b9EF1SBCJd8OjQiwCgpz9VXYtQLYGzER/view?usp=share_link',
 };
 
 const achievements = [
@@ -26,7 +27,7 @@ const achievements = [
         title: 'Top 20 Finalist — OJK Fintech Startup Accelerator',
         subtitle: 'OJK RI — 2024',
         description: 'Selected as a Top 20 finalist in the OJK Fintech Startup Accelerator Program with Tixchain.id, focusing on blockchain-based ticketing.',
-        color: 'from-blue-500/10', border: 'border-blue-500/20', dot: 'bg-blue-400', cert: CERT_URLS.top10,
+        color: 'from-blue-500/10', border: 'border-blue-500/20', dot: 'bg-blue-400', cert: CERT_URLS.ojk,
     },
     {
         icon: '🥇',
