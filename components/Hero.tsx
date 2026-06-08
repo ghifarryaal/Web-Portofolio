@@ -152,7 +152,7 @@ export default function Hero() {
                     {[
                         { label: 'View Projects', href: '/projects', style: 'bg-white text-black font-bold hover:bg-gray-100 shadow-[0_0_30px_rgba(255,255,255,0.12)]' },
                         { label: 'View Experience', href: '/experience', style: 'border border-white/15 hover:bg-white/8 text-white font-semibold backdrop-blur-md' },
-                        { label: 'Download CV', href: 'https://drive.google.com/file/d/1NbH-V17Dyqxls_A2w8tcA2v-3TJBy7db/view?usp=drive_link', style: 'border border-violet-500/30 bg-violet-500/10 hover:bg-violet-500/20 text-violet-300 font-semibold', external: true },
+                        { label: 'Download CV', href: 'https://drive.google.com/file/d/18dL4-XbUq6MtVjVvDjgkrNHwcAFq64Lb/view?usp=share_link', style: 'border border-violet-500/30 bg-violet-500/10 hover:bg-violet-500/20 text-violet-300 font-semibold', external: true },
                         { label: 'Contact Me', href: '/contact', style: 'border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 font-semibold' },
                     ].map((btn) => (
                         <motion.a

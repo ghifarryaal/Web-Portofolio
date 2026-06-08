@@ -77,7 +77,7 @@ export default function Contact() {
                             🔗 LinkedIn
                         </motion.a>
                         <motion.a
-                            href="https://drive.google.com/file/d/1NbH-V17Dyqxls_A2w8tcA2v-3TJBy7db/view?usp=drive_link"
+                            href="https://drive.google.com/file/d/18dL4-XbUq6MtVjVvDjgkrNHwcAFq64Lb/view?usp=share_link"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="px-7 py-3.5 rounded-xl border border-violet-500/30 bg-violet-500/10 hover:bg-violet-500/20 text-violet-300 font-semibold text-sm tracking-wide transition-all inline-flex items-center justify-center gap-2"
