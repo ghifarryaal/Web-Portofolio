@@ -12,13 +12,35 @@ const URLS = {
     zenchain: 'https://www.ejournal.pelitaindonesia.ac.id/index.php/JOISIE/article/view/4913/1903',
     pakein: 'https://drive.google.com/drive/folders/1DJ-vUoa5Pkwi6pD_POW10pJkfe_Lywbj?usp=drive_link',
     bundaku: 'https://drive.google.com/drive/folders/1BGM3JPLx_F-M7wu2GDL8gXinj-EApycS?usp=drive_link',
+    liquidity_research: 'https://quant.indonesiastockanalsyt.my.id/',
+    winjol: 'https://winjol.com',
 };
 
 // ── Project data ───────────────────────────────────────────────────────────────
 const projects = [
     {
         number: '01',
-        logo: '/Logo/Logo-idx.png',
+        logo: '/Logo/FEED WINJOL.webp',
+        category: 'Full-Stack Development & Architecture',
+        title: 'Winjol.com Ride-Sharing Ecosystem',
+        subtitle: 'Community-Based Open Trip Platform',
+        description:
+            'Engineered a decentralized-matching web application that replaces rigid ride-hailing algorithms with an interactive community forum, featuring instant role-swapping between Customer and Driver modes.',
+        impact: [
+            'Designed a high-performance, real-time database schema using Supabase to manage cross-table user profiles, orders, and chats seamlessly',
+            'Implemented Dual-Mode UI architecture with distinct light/dark transitions to eliminate user context confusion',
+            'Optimized route data structures using flexible JSONB geospatial data models to streamline commuter trip coordination',
+        ],
+        tools: ['React/Next.js', 'Supabase (PostgreSQL)', 'Real-time Web Sockets', 'Database Architecture'],
+        accent: 'from-blue-500/10',
+        border: 'border-blue-500/20',
+        glow: 'bg-blue-500/15',
+        tag: 'bg-blue-500/10 text-blue-400',
+        btn: { label: 'Explore Platform', href: URLS.winjol },
+    },
+    {
+        number: '02',
+        logo: '/Logo/Logo-idx.webp',
         category: 'Business Intelligence',
         title: 'IDX Stock Analysis Platform',
         subtitle: 'Workflow-Driven Capital Market Intelligence',
@@ -34,8 +56,8 @@ const projects = [
         btn: { label: 'Explore Platform', href: URLS.idx },
     },
     {
-        number: '02',
-        logo: '/Logo/tixchain-type-white.png',
+        number: '03',
+        logo: '/Logo/tixchain-type-white.webp',
         category: 'Web3 & Blockchain',
         title: 'Tixchain.id',
         subtitle: 'Blockchain NFT Ticketing Platform',
@@ -52,8 +74,8 @@ const projects = [
         btn: { label: 'Explore Tixchain', href: URLS.tixchain },
     },
     {
-        number: '03',
-        logo: '/Logo/ZenChain.png',
+        number: '04',
+        logo: '/Logo/ZenChain.webp',
         category: 'Research & Governance',
         title: 'ZenChain Smart Contract Research',
         subtitle: 'Decentralized E-Voting Governance',
@@ -69,8 +91,8 @@ const projects = [
         btn: { label: 'Read Publication', href: URLS.zenchain },
     },
     {
-        number: '04',
-        logo: '/Logo/Logo DOKU.png',
+        number: '05',
+        logo: '/Logo/Logo DOKU.webp',
         category: 'Data Analytics',
         title: 'DOKU Wallet Data Analytics',
         subtitle: 'E-Wallet Transaction Intelligence',
@@ -86,8 +108,28 @@ const projects = [
         btn: { label: 'View Case Study', href: URLS.doku },
     },
     {
-        number: '05',
-        logo: '/Logo/BundaKU.PNG',
+        number: '06',
+        logo: '/Logo/LiquidityResearch.webp',
+        category: 'Quantitative Finance & Analytics',
+        title: 'Market Liquidity & Volatility Research',
+        subtitle: 'Algorithmic Financial Market Analysis',
+        description:
+            'Conducted deep quantitative research on global financial market structures, analyzing bond market volatility, central bank interest rate trajectories, and liquidity fluctuations to optimize algorithmic risk management.',
+        impact: [
+            'Modeled predictive liquidity risk frameworks under high-volatility market scenarios',
+            'Analyzed macroeconomic data points to forecast interest rate impacts on municipal markets',
+            'Optimized data processing workflows for large-scale, historical market order book feeds',
+        ],
+        tools: ['Quantitative Analysis', 'Financial Modeling', 'Data Analytics', 'Risk Management'],
+        accent: 'from-emerald-500/10',
+        border: 'border-emerald-500/20',
+        glow: 'bg-emerald-500/15',
+        tag: 'bg-emerald-500/10 text-emerald-400',
+        btn: { label: 'View Research', href: URLS.liquidity_research },
+    },
+    {
+        number: '07',
+        logo: '/Logo/BundaKU.webp',
         category: 'HealthTech Strategy',
         title: 'BundaKu Digital Health Platform',
         subtitle: 'Telemedicine & Health Analytics',
@@ -103,8 +145,8 @@ const projects = [
         btn: { label: 'View Proposal', href: URLS.bundaku },
     },
     {
-        number: '06',
-        logo: '/Logo/logo pakein.png',
+        number: '08',
+        logo: '/Logo/logo pakein.webp',
         category: 'Consumer AI',
         title: 'Pake.in — AI Fashion Platform',
         subtitle: 'AI-Powered Fashion Recommendation & AR',

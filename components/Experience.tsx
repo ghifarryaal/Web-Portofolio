@@ -14,7 +14,7 @@ const experiences = [
         glowColor: 'bg-cyan-500/10',
         tagBg: 'bg-cyan-500/10 text-cyan-400',
         badge: '🚀 Top 20 OJK Fintech Startup Accelerator',
-        logo: '/Logo/tixchain-type-white.png',
+        logo: '/Logo/tixchain-type-white.webp',
         bullets: [
             'Top 20 Finalist in OJK Fintech Startup Accelerator Program 2026',
             'Founded and developed blockchain-based NFT ticketing platform',
@@ -32,7 +32,7 @@ const experiences = [
         glowColor: 'bg-emerald-500/10',
         tagBg: 'bg-emerald-500/10 text-emerald-400',
         badge: '🏆 Best Regional Team — Sobat Bumi Indonesia',
-        logo: '/Logo/LOGO SOBAT BUMI KARAWANG TRANSPARAN (1).png',
+        logo: '/Logo/LOGO SOBAT BUMI KARAWANG.webp',
         bullets: [
             'Led Sobat Bumi Karawang to win Best Regional Team in Sobat Bumi Indonesia',
             'Led sustainability, social, and community impact programs at regional level',
@@ -50,7 +50,7 @@ const experiences = [
         glowColor: 'bg-violet-500/10',
         tagBg: 'bg-violet-500/10 text-violet-400',
         badge: null,
-        logo: '/Logo/Logo BLM.png',
+        logo: '/Logo/Logo BLM.webp',
         bullets: [
             'Led faculty-level governance and strategic organizational initiatives',
             'Managed cross-organizational coordination across 4 student bodies',
@@ -67,7 +67,7 @@ const experiences = [
         glowColor: 'bg-blue-500/10',
         tagBg: 'bg-blue-500/10 text-blue-400',
         badge: null,
-        logo: '/Logo/Logo BLM.png',
+        logo: '/Logo/Logo BLM.webp',
         subtitle: 'Organizational Oversight & Budgetary Control',
         bullets: [
             'Managed and evaluated 50+ work programs across 4 student organizations, ensuring alignment with grand design, vision, and mission',
@@ -85,7 +85,7 @@ const experiences = [
         glowColor: 'bg-rose-500/10',
         tagBg: 'bg-rose-500/10 text-rose-400',
         badge: null,
-        logo: '/Logo/bitlabs.png',
+        logo: '/Logo/bitlabs.webp',
         bullets: [
             'Applied SQL and Python for structured data analysis and pipeline building',
             'Performed end-to-end data workflows from extraction to visualization',
@@ -102,7 +102,7 @@ const experiences = [
         glowColor: 'bg-amber-500/10',
         tagBg: 'bg-amber-500/10 text-amber-400',
         badge: null,
-        logo: '/Logo/Logo Himsika.png',
+        logo: '/Logo/Logo Himsika.webp',
         bullets: [
             'Developed leadership programs and organizational capacity-building systems',
             'Designed and facilitated cadre training and development programs',

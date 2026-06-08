@@ -37,7 +37,7 @@ export default function About() {
                             <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/10 p-2 glass">
                                 <div className="relative w-full h-full rounded-full overflow-hidden">
                                     <Image
-                                        src="/Logo/Foto Isa.jpg"
+                                        src="/Logo/Foto Isa.webp"
                                         alt="Isa Al Ghifary Ahmad"
                                         fill
                                         className="object-cover object-top scale-[1.3] transition-transform duration-700 hover:scale-[1.4]"

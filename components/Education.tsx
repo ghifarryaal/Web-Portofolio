@@ -36,7 +36,7 @@ export default function Education() {
                         {/* Logo */}
                         <div className="flex-shrink-0 relative w-16 h-16 rounded-2xl bg-white/5 border border-violet-500/30 overflow-hidden flex items-center justify-center">
                             <Image
-                                src="/Logo/Logo Unsika.png"
+                                src="/Logo/Logo Unsika.webp"
                                 alt="Universitas Singaperbangsa Karawang"
                                 fill
                                 className="object-contain p-2"
