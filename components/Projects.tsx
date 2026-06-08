@@ -27,9 +27,9 @@ const projects = [
         description:
             'Engineered a decentralized-matching web application that replaces rigid ride-hailing algorithms with an interactive community forum, featuring instant role-swapping between Customer and Driver modes.',
         impact: [
-            'Designed a high-performance, real-time database schema using Supabase to manage cross-table user profiles, orders, and chats seamlessly',
-            'Implemented Dual-Mode UI architecture with distinct light/dark transitions to eliminate user context confusion',
-            'Optimized route data structures using flexible JSONB geospatial data models to streamline commuter trip coordination',
+            'Designed high-performance Supabase schemas for real-time profiles, orders, and chats',
+            'Implemented Dual-Mode UI architecture with distinct transitions to prevent context confusion',
+            'Optimized routes using flexible JSONB geospatial data models for commuter coordination',
         ],
         tools: ['React/Next.js', 'Supabase (PostgreSQL)', 'Real-time Web Sockets', 'Database Architecture'],
         accent: 'from-blue-500/10',
@@ -117,8 +117,8 @@ const projects = [
             'Conducted deep quantitative research on global financial market structures, analyzing bond market volatility, central bank interest rate trajectories, and liquidity fluctuations to optimize algorithmic risk management.',
         impact: [
             'Modeled predictive liquidity risk frameworks under high-volatility market scenarios',
-            'Analyzed macroeconomic data points to forecast interest rate impacts on municipal markets',
-            'Optimized data processing workflows for large-scale, historical market order book feeds',
+            'Analyzed macroeconomic data to forecast interest rate impacts on municipal markets',
+            'Optimized data processing workflows for large-scale market order book feeds',
         ],
         tools: ['Quantitative Analysis', 'Financial Modeling', 'Data Analytics', 'Risk Management'],
         accent: 'from-emerald-500/10',
@@ -217,15 +217,17 @@ export default function Projects() {
                             {/* Hover glow */}
                             <div className={`absolute -top-10 -right-10 w-40 h-40 rounded-full blur-[70px] ${p.glow} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />
 
-                            {/* Watermark number & Category */}
-                            <div className="flex justify-between items-start mb-6">
-                                <span className={`text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1.5 rounded-full glass border border-white/5 ${p.tag}`}>
+                            {/* Category Tag */}
+                            <div className="mb-6 flex items-start z-10 relative">
+                                <span className={`text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1.5 rounded-full glass border border-white/5 ${p.tag} max-w-[85%] break-words`}>
                                     {p.category}
                                 </span>
-                                <span className="text-4xl font-black text-white/[0.03] select-none leading-none group-hover:text-white/[0.08] transition-colors duration-500">
-                                    {p.number}
-                                </span>
                             </div>
+
+                            {/* Watermark number */}
+                            <span className="absolute top-7 right-7 text-4xl font-black text-white/[0.03] select-none leading-none group-hover:text-white/[0.08] transition-colors duration-500 z-0">
+                                {p.number}
+                            </span>
 
                             {/* Logo Section */}
                             <div className="mb-6 relative h-12 w-full flex items-center">
@@ -265,7 +267,7 @@ export default function Projects() {
                                 <p className="text-[10px] font-black text-gray-600 uppercase tracking-[0.15em] mb-4">Key Outcome</p>
                                 {p.impact.map((item) => (
                                     <div key={item} className="flex items-start gap-3">
-                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors" />
+                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors flex-shrink-0" />
                                         <span className="text-[11px] text-gray-500 leading-relaxed font-medium">
                                             {item}
                                         </span>
