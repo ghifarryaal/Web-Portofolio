@@ -27,15 +27,16 @@ const projects = [
         description:
             'Engineered a decentralized-matching web application that replaces rigid ride-hailing algorithms with an interactive community forum, featuring instant role-swapping between Customer and Driver modes.',
         impact: [
-            'Designed high-performance Supabase schemas for real-time profiles, orders, and chats',
-            'Implemented Dual-Mode UI architecture with distinct transitions to prevent context confusion',
-            'Optimized routes using flexible JSONB geospatial data models for commuter coordination',
+            'Designed real-time database schemas using Supabase',
+            'Implemented Dual-Mode UI transitions for seamless swapping',
+            'Optimized routes using JSONB geospatial data models',
         ],
         tools: ['React/Next.js', 'Supabase (PostgreSQL)', 'Real-time Web Sockets', 'Database Architecture'],
         accent: 'from-blue-500/10',
         border: 'border-blue-500/20',
         glow: 'bg-blue-500/15',
         tag: 'bg-blue-500/10 text-blue-400',
+        dot: 'bg-blue-400',
         btn: { label: 'Explore Platform', href: URLS.winjol },
     },
     {
@@ -53,6 +54,7 @@ const projects = [
         ],
         tools: ['n8n', 'Data Pipelines', 'Automation', 'Web Platform'],
         accent: 'from-amber-500/10', border: 'border-amber-500/20', glow: 'bg-amber-500/15', tag: 'bg-amber-500/10 text-amber-400',
+        dot: 'bg-amber-400',
         btn: { label: 'Explore Platform', href: URLS.idx },
     },
     {
@@ -71,6 +73,7 @@ const projects = [
         ],
         tools: ['Blockchain', 'NFT', 'Product Strategy', 'Web3'],
         accent: 'from-cyan-500/10', border: 'border-cyan-500/20', glow: 'bg-cyan-500/15', tag: 'bg-cyan-500/10 text-cyan-400',
+        dot: 'bg-cyan-400',
         btn: { label: 'Explore Tixchain', href: URLS.tixchain },
     },
     {
@@ -88,6 +91,7 @@ const projects = [
         ],
         tools: ['Solidity', 'Smart Contracts', 'Blockchain', 'Academic Research'],
         accent: 'from-orange-500/10', border: 'border-orange-500/20', glow: 'bg-orange-500/15', tag: 'bg-orange-500/10 text-orange-400',
+        dot: 'bg-orange-400',
         btn: { label: 'Read Publication', href: URLS.zenchain },
     },
     {
@@ -105,6 +109,7 @@ const projects = [
         ],
         tools: ['SQL', 'Python', 'Pandas', 'Data Visualization'],
         accent: 'from-violet-500/10', border: 'border-violet-500/20', glow: 'bg-violet-500/15', tag: 'bg-violet-500/10 text-violet-400',
+        dot: 'bg-violet-400',
         btn: { label: 'View Case Study', href: URLS.doku },
     },
     {
@@ -116,15 +121,16 @@ const projects = [
         description:
             'Conducted deep quantitative research on global financial market structures, analyzing bond market volatility, central bank interest rate trajectories, and liquidity fluctuations to optimize algorithmic risk management.',
         impact: [
-            'Modeled predictive liquidity risk frameworks under high-volatility market scenarios',
-            'Analyzed macroeconomic data to forecast interest rate impacts on municipal markets',
-            'Optimized data processing workflows for large-scale market order book feeds',
+            'Modeled predictive liquidity risk under high volatility',
+            'Analyzed macroeconomic factors for interest rate forecast',
+            'Optimized workflows for large-scale order book feeds',
         ],
         tools: ['Quantitative Analysis', 'Financial Modeling', 'Data Analytics', 'Risk Management'],
         accent: 'from-emerald-500/10',
         border: 'border-emerald-500/20',
         glow: 'bg-emerald-500/15',
         tag: 'bg-emerald-500/10 text-emerald-400',
+        dot: 'bg-emerald-400',
         btn: { label: 'View Research', href: URLS.liquidity_research },
     },
     {
@@ -142,6 +148,7 @@ const projects = [
         ],
         tools: ['Product Strategy', 'Business Modeling', 'Financial Projections', 'UX Design'],
         accent: 'from-emerald-500/10', border: 'border-emerald-500/20', glow: 'bg-emerald-500/15', tag: 'bg-emerald-500/10 text-emerald-400',
+        dot: 'bg-emerald-400',
         btn: { label: 'View Proposal', href: URLS.bundaku },
     },
     {
@@ -159,6 +166,7 @@ const projects = [
         ],
         tools: ['AI/ML', 'AR Technology', 'Business Analytics', 'Product Design'],
         accent: 'from-pink-500/10', border: 'border-pink-500/20', glow: 'bg-pink-500/15', tag: 'bg-pink-500/10 text-pink-400',
+        dot: 'bg-pink-400',
         btn: { label: 'View Proposal', href: URLS.pakein },
     },
 ];
@@ -267,7 +275,7 @@ export default function Projects() {
                                 <p className="text-[10px] font-black text-gray-600 uppercase tracking-[0.15em] mb-4">Key Outcome</p>
                                 {p.impact.map((item) => (
                                     <div key={item} className="flex items-start gap-3">
-                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors flex-shrink-0" />
+                                        <div className={`mt-1.5 w-1.5 h-1.5 rounded-full ${p.dot} opacity-40 group-hover:opacity-100 transition-opacity flex-shrink-0`} />
                                         <span className="text-[11px] text-gray-500 leading-relaxed font-medium">
                                             {item}
                                         </span>
