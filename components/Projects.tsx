@@ -12,7 +12,7 @@ const URLS = {
     zenchain: 'https://www.ejournal.pelitaindonesia.ac.id/index.php/JOISIE/article/view/4913/1903',
     pakein: 'https://drive.google.com/drive/folders/1DJ-vUoa5Pkwi6pD_POW10pJkfe_Lywbj?usp=drive_link',
     bundaku: 'https://drive.google.com/drive/folders/1BGM3JPLx_F-M7wu2GDL8gXinj-EApycS?usp=drive_link',
-    liquidity_research: 'https://quant.indonesiastockanalsyt.my.id/',
+    liquidity_research: 'https://quant.indonesiastockanalyst.my.id/',
     winjol: 'https://winjol.com',
 };
 
@@ -116,10 +116,10 @@ const projects = [
         number: '06',
         logo: '/Logo/LiquidityResearch.webp',
         category: 'Quantitative Finance & Analytics',
-        title: 'Market Liquidity & Volatility Research',
-        subtitle: 'Algorithmic Financial Market Analysis',
+        title: 'Market Liquidity & Volatility Platform',
+        subtitle: 'Algorithmic Financial Market Platform',
         description:
-            'Conducted deep quantitative research on global financial market structures, analyzing bond market volatility, central bank interest rate trajectories, and liquidity fluctuations to optimize algorithmic risk management.',
+            'Developed a quantitative analysis platform to monitor global financial market structures, analyzing bond market volatility, central bank interest rate trajectories, and liquidity fluctuations to optimize algorithmic risk management.',
         impact: [
             'Modeled predictive liquidity risk under high volatility',
             'Analyzed macroeconomic factors for interest rate forecast',
@@ -131,7 +131,7 @@ const projects = [
         glow: 'bg-emerald-500/15',
         tag: 'bg-emerald-500/10 text-emerald-400',
         dot: 'bg-emerald-400',
-        btn: { label: 'View Research', href: URLS.liquidity_research },
+        btn: { label: 'Explore Platform', href: URLS.liquidity_research },
     },
     {
         number: '07',
