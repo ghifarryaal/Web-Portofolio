@@ -1,9 +1,11 @@
 import Experience from '@/components/Experience';
+import Contact from '@/components/Contact';
 
 export default function ExperiencePage() {
     return (
-        <main className="min-h-screen pt-24">
+        <>
             <Experience />
-        </main>
+            <Contact />
+        </>
     );
 }

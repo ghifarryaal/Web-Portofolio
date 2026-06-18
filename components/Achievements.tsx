@@ -1,132 +1,191 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-
-const CERT_URLS = {
-    sobatBumi: 'https://drive.google.com/file/d/1xPGt4CTp9M1nu0ZPvGIDh5sSZK8oHzh2/view?usp=drive_link',
-    compfair: 'https://drive.google.com/file/d/1ZyaKztY5B745-mAtoA9aax-x-XVu3aCQ/view?usp=drive_link',
-    top10: 'https://drive.google.com/file/d/1ffhcybZrRylDr1CY0rNqyJ7WJXYKOgun/view?usp=drive_link',
-    top30: 'https://drive.google.com/file/d/1Ob6JR8xHHQxAt9ek86m03HJeiX2DcgIz/view?usp=drive_link',
-    beasiswa: 'https://drive.google.com/file/d/15hioEBgULbiGjOg2-L3d-8vRPxlFZOBR/view?usp=drive_link',
-    dutaSaham: 'https://drive.google.com/file/d/1afjn5rscJAxWL5XoK0dCPiEgcVc6v-tL/view?usp=drive_link',
-    ojk: 'https://drive.google.com/file/d/1b9EF1SBCJd8OjQiwCgpz9VXYtQLYGzER/view?usp=share_link',
-};
+import Image from 'next/image';
 
 const achievements = [
     {
-        icon: '🏆',
         title: 'Best Regional Team — Sobat Bumi Indonesia',
         subtitle: 'Pertamina Foundation — 2025',
         description: 'Led Sobat Bumi Karawang to the national award for Best Regional Team across all Sobat Bumi Indonesia chapters.',
-        color: 'from-amber-500/10', border: 'border-amber-500/20', dot: 'bg-amber-400', cert: CERT_URLS.sobatBumi,
+        cert: 'https://drive.google.com/file/d/1xPGt4CTp9M1nu0ZPvGIDh5sSZK8oHzh2/view',
     },
     {
-        icon: '🚀',
         title: 'Top 20 Finalist — OJK Fintech Startup Accelerator',
         subtitle: 'OJK RI — 2026',
         description: 'Selected as a Top 20 finalist in the OJK Fintech Startup Accelerator Program with Tixchain.id, focusing on blockchain-based ticketing.',
-        color: 'from-blue-500/10', border: 'border-blue-500/20', dot: 'bg-blue-400', cert: CERT_URLS.ojk,
+        cert: 'https://drive.google.com/file/d/1b9EF1SBCJd8OjQiwCgpz9VXYtQLYGzER/view',
     },
     {
-        icon: '🥇',
         title: '1st Winner — Business Plan Competition',
         subtitle: 'Compfair 2024',
         description: 'Won 1st place in a competitive university-level business plan competition with an innovative tech startup concept.',
-        color: 'from-cyan-500/10', border: 'border-cyan-500/20', dot: 'bg-cyan-400', cert: CERT_URLS.compfair,
+        cert: 'https://drive.google.com/file/d/1ZyaKztY5B745-mAtoA9aax-x-XVu3aCQ/view',
     },
     {
-        icon: '🏅',
         title: 'Top 10 Finalist — National Business Plan Competition',
         subtitle: 'Creative Summit 2024 — Universitas Negeri Yogyakarta',
         description: 'Reached Top 10 nationally in the Creative Summit National Business Plan Competition held at Universitas Negeri Yogyakarta.',
-        color: 'from-orange-500/10', border: 'border-orange-500/20', dot: 'bg-orange-400', cert: CERT_URLS.top10,
+        cert: 'https://drive.google.com/file/d/1ffhcybZrRylDr1CY0rNqyJ7WJXYKOgun/view',
     },
     {
-        icon: '🎖️',
         title: 'Top 30 Finalist — National Business Plan Competition',
         subtitle: 'National Level Finalist',
         description: 'Reached the Top 30 nationally in a highly competitive national business plan competition.',
-        color: 'from-violet-500/10', border: 'border-violet-500/20', dot: 'bg-violet-400', cert: CERT_URLS.top30,
+        cert: 'https://drive.google.com/file/d/1Ob6JR8xHHQxAt9ek86m03HJeiX2DcgIz/view',
     },
     {
-        icon: '🌱',
         title: 'Pertamina Sobat Bumi Scholarship Awardee',
         subtitle: 'Pertamina Foundation — PF 11',
         description: 'Awarded the Pertamina Foundation scholarship for academic excellence and outstanding leadership contributions.',
-        color: 'from-emerald-500/10', border: 'border-emerald-500/20', dot: 'bg-emerald-400', cert: CERT_URLS.beasiswa,
+        cert: 'https://drive.google.com/file/d/15hioEBgULbiGjOg2-L3d-8vRPxlFZOBR/view',
     },
     {
-        icon: '📈',
         title: 'Sharia Stock Ambassador 2025',
         subtitle: 'Duta Saham Syariah — National',
         description: 'Selected as a national ambassador promoting sharia-compliant stock investment and financial literacy programs.',
-        color: 'from-rose-500/10', border: 'border-rose-500/20', dot: 'bg-rose-400', cert: CERT_URLS.dutaSaham,
+        cert: 'https://drive.google.com/file/d/1afjn5rscJAxWL5XoK0dCPiEgcVc6v-tL/view',
     },
 ];
 
 export default function Achievements() {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: '-80px' });
-
     return (
-        <section id="achievements" className="py-24 px-6">
-            <div className="divider mb-24" />
-            <div className="container mx-auto max-w-5xl" ref={ref}>
-                <motion.div
-                    initial={{ opacity: 0, y: 24 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8 }}
-                    className="mb-14"
-                >
-                    <span className="section-label">Recognition</span>
-                    <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-                        Achievements &amp; <span className="gradient-text">Awards</span>
-                    </h2>
-                    <p className="text-gray-600 text-sm mt-3 max-w-md">
-                        Verified certificates available via Google Drive on each card.
-                    </p>
-                </motion.div>
-
-                <div className="space-y-3">
-                    {achievements.map((a, i) => (
+        <main className="min-h-screen">
+            <section id="achievements" className="px-6 pt-32 pb-20 md:pb-28">
+                <div className="container mx-auto max-w-5xl">
+                    {/* Header */}
+                    <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-16">
                         <motion.div
-                            key={a.title}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={isInView ? { opacity: 1, x: 0 } : {}}
-                            transition={{ duration: 0.5, delay: i * 0.09 }}
-                            className={`glass glass-hover rounded-2xl border ${a.border} bg-gradient-to-r ${a.color} to-transparent`}
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="md:col-span-4"
                         >
-                            <div className="flex items-center justify-between gap-4 p-5">
-                                <div className="flex items-start gap-4 flex-1 min-w-0">
-                                    <span className="text-2xl flex-shrink-0">{a.icon}</span>
-                                    <div className="min-w-0">
-                                        <div className="flex flex-wrap items-center gap-2 mb-0.5">
-                                            <h3 className="text-sm font-bold text-white leading-tight">{a.title}</h3>
-                                            <span className={`w-1.5 h-1.5 rounded-full ${a.dot} flex-shrink-0`} />
-                                            <span className="text-xs text-gray-600">{a.subtitle}</span>
-                                        </div>
-                                        <p className="text-xs text-gray-500 leading-relaxed hidden sm:block">{a.description}</p>
+                            <p className="section-num">01</p>
+                            <h1 className="serif text-4xl md:text-5xl font-light text-white tracking-tight leading-[1.05]">
+                                Achievements<br /><span className="italic-serif text-[var(--accent)]">& awards</span>
+                            </h1>
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="md:col-span-8"
+                        >
+                            <p className="text-[16px] text-[var(--muted)] leading-[1.75] max-w-2xl">
+                                Recognition, awards, and scholarships earned through competition, leadership, and
+                                academic work. Verified certificates available on each entry.
+                            </p>
+                        </motion.div>
+                    </div>
+
+                    {/* Education block (merged) */}
+                    <motion.div
+                        id="education"
+                        initial={{ opacity: 0, y: 12 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                        className="mb-20"
+                    >
+                        <p className="section-num">02</p>
+                        <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+                            <div className="md:col-span-4 flex items-center gap-4">
+                                <div className="relative w-14 h-14 rounded-lg overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                                    <Image
+                                        src="/Logo/Logo Unsika.webp"
+                                        alt="Universitas Singaperbangsa Karawang"
+                                        fill
+                                        className="object-contain p-2"
+                                        sizes="56px"
+                                    />
+                                </div>
+                                <div>
+                                    <h2 className="serif text-lg md:text-xl text-white font-medium leading-tight">
+                                        Education
+                                    </h2>
+                                    <p className="text-[12px] text-[var(--dim)] font-mono mt-1">2022 — 2026</p>
+                                </div>
+                            </div>
+
+                            <div className="md:col-span-8 grid sm:grid-cols-3 gap-6">
+                                <div>
+                                    <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--dim)] mb-2">
+                                        University
+                                    </p>
+                                    <p className="text-[14px] text-white font-medium leading-snug">
+                                        Universitas Singaperbangsa Karawang
+                                    </p>
+                                    <p className="text-[12px] text-[var(--muted)] mt-1">
+                                        Bachelor of Information Systems
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--dim)] mb-2">
+                                        GPA
+                                    </p>
+                                    <p className="serif text-2xl text-[var(--accent)] font-light">3.93</p>
+                                    <p className="text-[12px] text-[var(--muted)] mt-1">out of 4.00</p>
+                                </div>
+                                <div>
+                                    <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--dim)] mb-2">
+                                        Focus areas
+                                    </p>
+                                    <p className="text-[14px] text-white font-medium leading-snug">
+                                        IT, Product, Data
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    <div className="editorial-rule mb-14" />
+
+                    {/* Achievements list — editorial numbered */}
+                    <div className="space-y-px bg-white/8">
+                        {achievements.map((a, i) => (
+                            <motion.div
+                                key={a.title}
+                                initial={{ opacity: 0, y: 8 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.4, delay: i * 0.04 }}
+                                viewport={{ once: true }}
+                                className="bg-[#0a0a0c] group"
+                            >
+                                <div className="grid md:grid-cols-12 gap-6 md:gap-8 p-6 md:p-8 hover:bg-[#0f0f12] transition-colors">
+                                    <div className="md:col-span-1">
+                                        <span className="num-marker text-2xl md:text-3xl">
+                                            {String(i + 1).padStart(2, '0')}
+                                        </span>
+                                    </div>
+                                    <div className="md:col-span-7">
+                                        <h3 className="serif text-[20px] md:text-[22px] font-medium text-white leading-snug mb-1">
+                                            {a.title}
+                                        </h3>
+                                        <p className="text-[12px] text-[var(--dim)] font-mono mb-3">
+                                            {a.subtitle}
+                                        </p>
+                                        <p className="text-[14px] text-[var(--muted)] leading-[1.65] max-w-2xl">
+                                            {a.description}
+                                        </p>
+                                    </div>
+                                    <div className="md:col-span-4 flex md:justify-end items-start">
+                                        <a
+                                            href={a.cert}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-1.5 text-[12px] font-medium text-[var(--muted)] hover:text-[var(--accent)] transition-colors"
+                                        >
+                                            <span>View certificate</span>
+                                            <span aria-hidden>↗</span>
+                                        </a>
                                     </div>
                                 </div>
-                                <a
-                                    href={a.cert}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex-shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass border border-white/10 text-[11px] font-semibold text-gray-400 hover:text-white hover:border-white/20 transition-all whitespace-nowrap"
-                                >
-                                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                    </svg>
-                                    View Certificate
-                                </a>
-                            </div>
-                            <p className="text-xs text-gray-500 leading-relaxed sm:hidden px-5 pb-4">{a.description}</p>
-                        </motion.div>
-                    ))}
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
     );
 }

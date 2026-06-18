@@ -2,121 +2,107 @@
 
 import { motion } from 'framer-motion';
 
-const openTo = [
-    { icon: '🗂️', label: 'IT Project Management' },
-    { icon: '📦', label: 'Product Management' },
-    { icon: '🚀', label: 'Business Development' },
-    { icon: '📊', label: 'Data Analysis' },
-];
-
 export default function Contact() {
     return (
-        <footer id="contact" className="px-6 pb-16 pt-8">
-            <div className="divider mb-24" />
+        <footer id="contact" className="px-6 pt-16 pb-10">
+            <div className="editorial-rule mb-20" />
             <div className="container mx-auto max-w-5xl">
-
-                {/* Open To section */}
-                <motion.div
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="mb-8"
-                >
-                    <span className="section-label">Opportunities</span>
-                    <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-3">
-                        Open to Opportunities In
-                    </h2>
-                    <div className="flex flex-wrap gap-2.5 mb-10">
-                        {openTo.map((item) => (
-                            <div
-                                key={item.label}
-                                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass border border-white/10"
-                            >
-                                <span>{item.icon}</span>
-                                <span className="text-sm font-semibold text-gray-300">{item.label}</span>
-                            </div>
-                        ))}
-                    </div>
-                </motion.div>
-
                 {/* CTA Block */}
                 <motion.div
-                    initial={{ opacity: 0, y: 24 }}
+                    initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.1 }}
+                    transition={{ duration: 0.7 }}
                     viewport={{ once: true }}
-                    className="relative glass rounded-3xl p-10 md:p-14 text-center overflow-hidden border border-white/8 mb-16"
+                    className="grid md:grid-cols-12 gap-10 md:gap-16 mb-20"
                 >
-                    <div className="absolute -top-16 -left-16 w-48 h-48 rounded-full blur-[80px] bg-violet-600/20 pointer-events-none" />
-                    <div className="absolute -bottom-16 -right-16 w-48 h-48 rounded-full blur-[80px] bg-cyan-600/15 pointer-events-none" />
+                    <div className="md:col-span-7">
+                        <p className="section-num">Get in touch</p>
+                        <h2 className="serif text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight leading-[1.05] mb-6">
+                            Let&rsquo;s build<br />
+                            <span className="italic-serif text-[var(--accent)]">impactful technology</span>
+                            <br />
+                            together.
+                        </h2>
+                        <p className="text-[15px] text-[var(--muted)] leading-[1.75] max-w-md mb-8">
+                            Open for product, data, project management, and startup opportunities.
+                            I respond within 1&ndash;2 business days.
+                        </p>
 
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 leading-tight">
-                        Let&apos;s Build <span className="gradient-text">Impactful Technology</span>
-                        <br />and Products Together
-                    </h2>
-                    <p className="text-gray-500 text-sm md:text-base max-w-lg mx-auto mb-10 leading-relaxed">
-                        Open for product roles, data roles, project management, tech consulting, and startup opportunities.
-                        Let&apos;s create something that matters.
-                    </p>
+                        <div className="flex flex-wrap gap-3">
+                            <a
+                                href="mailto:ghifarryaal@gmail.com"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#0a0a0c] text-sm font-semibold hover:bg-[var(--accent)] transition-colors"
+                            >
+                                <span aria-hidden>✉</span> Send email
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/isa-al-ghifary-ahmad"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/15 text-white text-sm font-medium hover:border-white/30 hover:bg-white/5 transition-all"
+                            >
+                                LinkedIn <span aria-hidden>↗</span>
+                            </a>
+                            <a
+                                href="https://drive.google.com/file/d/18dL4-XbUq6MtVjVvDjgkrNHwcAFq64Lb/view?usp=share_link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[var(--muted)] text-sm font-medium hover:text-white transition-colors"
+                            >
+                                <span aria-hidden>↓</span> Download CV
+                            </a>
+                        </div>
+                    </div>
 
-                    <div className="flex flex-col sm:flex-row gap-3 justify-center flex-wrap">
-                        <motion.a
-                            href="mailto:ghifarryaal@gmail.com"
-                            className="px-7 py-3.5 rounded-xl bg-white text-black font-bold text-sm tracking-wide hover:bg-gray-100 transition-all shadow-[0_0_30px_rgba(255,255,255,0.08)] inline-flex items-center justify-center gap-2"
-                            whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-                        >
-                            ✉️ Send Email
-                        </motion.a>
-                        <motion.a
-                            href="https://www.linkedin.com/in/isa-al-ghifary-ahmad"
-                            target="_blank" rel="noopener noreferrer"
-                            className="px-7 py-3.5 rounded-xl border border-white/15 hover:bg-white/8 text-white font-semibold text-sm tracking-wide transition-all inline-flex items-center justify-center gap-2"
-                            whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-                        >
-                            🔗 LinkedIn
-                        </motion.a>
-                        <motion.a
-                            href="https://drive.google.com/file/d/18dL4-XbUq6MtVjVvDjgkrNHwcAFq64Lb/view?usp=share_link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="px-7 py-3.5 rounded-xl border border-violet-500/30 bg-violet-500/10 hover:bg-violet-500/20 text-violet-300 font-semibold text-sm tracking-wide transition-all inline-flex items-center justify-center gap-2"
-                            whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-                        >
-                            ↓ Download CV
-                        </motion.a>
+                    {/* Quick info */}
+                    <div className="md:col-span-5 md:pt-2 space-y-8">
+                        <div>
+                            <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--dim)] mb-2">
+                                Email
+                            </p>
+                            <a
+                                href="mailto:ghifarryaal@gmail.com"
+                                className="text-[15px] text-white link-editorial"
+                            >
+                                ghifarryaal@gmail.com
+                            </a>
+                        </div>
+                        <div>
+                            <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--dim)] mb-2">
+                                Based in
+                            </p>
+                            <p className="text-[15px] text-white">Karawang, West Java, Indonesia</p>
+                        </div>
+                        <div>
+                            <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--dim)] mb-2">
+                                Open to
+                            </p>
+                            <p className="text-[15px] text-white leading-relaxed">
+                                IT Project Management, Product Management, Business Development, Data Analysis
+                            </p>
+                        </div>
                     </div>
                 </motion.div>
 
-                {/* Footer bar */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    viewport={{ once: true }}
-                    className="grid md:grid-cols-3 gap-6 items-start pt-8 border-t border-white/5"
-                >
+                {/* Signature + footer bar */}
+                <div className="border-t border-white/8 pt-8 flex flex-col md:flex-row justify-between gap-6 items-start md:items-center">
                     <div>
-                        <p className="text-base font-bold text-white mb-1">Isa<span className="gradient-text">.</span></p>
-                        <p className="text-xs text-gray-700 leading-relaxed">
-                            IT Project & Product Manager<br />Business-Technology Professional
+                        <p className="serif text-2xl text-white italic mb-1">
+                            <span className="italic-serif text-[var(--accent)]">Isa</span>
+                        </p>
+                        <p className="text-[12px] text-[var(--dim)]">
+                            IT Project & Product Manager · Business-Technology Professional
                         </p>
                     </div>
-                    <div className="space-y-2">
-                        <p className="text-[10px] text-gray-700 font-bold uppercase tracking-widest mb-2">Contact</p>
-                        <a href="mailto:ghifarryaal@gmail.com" className="flex items-center gap-2 text-xs text-gray-500 hover:text-white transition-colors">
-                            ✉️ ghifarryaal@gmail.com
-                        </a>
-                        <a href="https://www.linkedin.com/in/isa-al-ghifary-ahmad" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs text-gray-500 hover:text-white transition-colors">
-                            🔗 LinkedIn Profile
-                        </a>
-                        <p className="flex items-center gap-2 text-xs text-gray-700">📍 Karawang, West Java, Indonesia</p>
+                    <div className="text-left md:text-right">
+                        <p className="text-[12px] text-[var(--dim)]">
+                            &copy; 2026 Isa Al Ghifary Ahmad
+                        </p>
+                        <p className="text-[12px] text-[var(--dim)] mt-1">
+                            Built with Next.js &amp; Framer Motion
+                        </p>
                     </div>
-                    <div className="md:text-right">
-                        <p className="text-xs text-gray-700">© 2026 Isa Al Ghifary Ahmad</p>
-                        <p className="text-xs text-gray-700 mt-1">Built with Next.js &amp; Framer Motion</p>
-                    </div>
-                </motion.div>
+                </div>
             </div>
         </footer>
     );

@@ -1,9 +1,11 @@
 import Achievements from '@/components/Achievements';
+import Contact from '@/components/Contact';
 
 export default function AchievementsPage() {
     return (
-        <main className="min-h-screen pt-24">
+        <>
             <Achievements />
-        </main>
+            <Contact />
+        </>
     );
 }

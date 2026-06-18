@@ -12,63 +12,62 @@ const capabilities = [
 
 export default function Summary() {
     return (
-        <section id="summary" className="py-24 px-6">
-            <div className="divider mb-24" />
+        <section id="summary" className="px-6 py-20 md:py-28">
+            <div className="editorial-rule mb-20" />
             <div className="container mx-auto max-w-5xl">
-                <motion.div
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="mb-12"
-                >
-                    <span className="section-label">Who I Am</span>
-                    <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-                        Professional <span className="gradient-text">Summary</span>
-                    </h2>
-                </motion.div>
-
-                <div className="max-w-3xl mx-auto">
-                    {/* Main text */}
+                <div className="grid md:grid-cols-12 gap-10 md:gap-16">
+                    {/* Section label */}
                     <motion.div
-                        initial={{ opacity: 0, y: 24 }}
+                        initial={{ opacity: 0, y: 12 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
-                        className="space-y-8 text-center"
+                        className="md:col-span-4"
                     >
-                        <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-                            Technology-focused business professional with proven experience in building{' '}
-                            <span className="text-white font-semibold">digital platforms</span>, developing{' '}
-                            <span className="text-white font-semibold">workflow automation systems</span>, and leading{' '}
-                            strategic initiatives across technology and organizational environments.
+                        <p className="section-num">02</p>
+                        <h2 className="serif text-3xl md:text-4xl font-light text-white tracking-tight leading-tight">
+                            Professional<br /><span className="italic-serif text-[var(--accent)]">summary</span>
+                        </h2>
+                    </motion.div>
+
+                    {/* Content */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 12 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        viewport={{ once: true }}
+                        className="md:col-span-8 space-y-5"
+                    >
+                        <p className="text-[17px] md:text-[18px] text-[var(--foreground)] leading-[1.7]">
+                            I&rsquo;m a technology-focused business professional with a track record of building{' '}
+                            <span className="text-white font-medium">digital platforms</span>, developing{' '}
+                            <span className="text-white font-medium">workflow automation systems</span>, and
+                            leading strategic initiatives across technology and organizational environments.
                         </p>
-                        <p className="text-base text-gray-500 leading-relaxed">
-                            Proven track record in combining business thinking, product execution, and data analysis
-                            to deliver meaningful, measurable impact.
+                        <p className="text-[15px] text-[var(--muted)] leading-[1.7]">
+                            I combine business thinking, product execution, and data analysis to deliver
+                            meaningful, measurable impact — translating complex requirements into systems
+                            that work.
                         </p>
 
-                        {/* Capability checklist - Optimized for mobile */}
-                        <div className="glass rounded-3xl p-6 md:p-10 border border-white/8 grid md:grid-cols-2 gap-x-8 gap-y-4 text-left">
-                            <p className="col-span-full text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Demonstrated Ability To</p>
+                        {/* Capability list — minimal */}
+                        <ul className="pt-4 space-y-3">
                             {capabilities.map((cap, i) => (
-                                <motion.div
+                                <motion.li
                                     key={cap}
-                                    initial={{ opacity: 0, x: -16 }}
+                                    initial={{ opacity: 0, x: -8 }}
                                     whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.4, delay: 0.1 + i * 0.05 }}
+                                    transition={{ duration: 0.4, delay: 0.2 + i * 0.05 }}
                                     viewport={{ once: true }}
-                                    className="flex items-center gap-3"
+                                    className="flex items-baseline gap-4 text-[15px] text-[var(--foreground)]"
                                 >
-                                    <div className="w-5 h-5 rounded-full bg-violet-500/20 flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-3 h-3 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-sm text-gray-300">{cap}</span>
-                                </motion.div>
+                                    <span className="num-marker text-sm shrink-0">
+                                        {String(i + 1).padStart(2, '0')}
+                                    </span>
+                                    <span>{cap}</span>
+                                </motion.li>
                             ))}
-                        </div>
+                        </ul>
                     </motion.div>
                 </div>
             </div>
